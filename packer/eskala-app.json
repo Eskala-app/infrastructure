@@ -1,0 +1,29 @@
+{
+  "variables":{
+    "account_file": "packer-sa.json",
+    "project_id": "development-269007",
+    "source_image": "centos-8-v20200205"
+  },
+  "builders": [
+    {
+      "type": "googlecompute",
+      "account_file": "{{user `account_file`}}",
+      "project_id": "{{user `project_id`}}",
+      "source_image": "{{user `source_image`}}",
+      "machine_type": "g1-small",
+      "image_name": "eskala",
+      "image_description": "A CentOS 8 image with NGINX and dependencies to run the eskala-app",
+      "image_family": "custom-eskala",
+      "ssh_username": "packer",
+      "zone": "us-west2-a"
+    }
+  ],
+
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "scripts/install-eskala.sh"
+    }
+  ]
+}
+
