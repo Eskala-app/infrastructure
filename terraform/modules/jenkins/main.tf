@@ -10,7 +10,7 @@ resource "google_compute_instance" "jenkins-server" {
 
   boot_disk {
     initialize_params {
-      image = "custom-eskala/jenkins"
+      image = "development-269007/jenkins"
       size  = "20"
       type  = "pd-standard"
     }
@@ -18,5 +18,10 @@ resource "google_compute_instance" "jenkins-server" {
 
   network_interface {
     subnetwork = var.subnet_name
+
+    access_config {
+
+    }
+
   }
 }
