@@ -1,5 +1,5 @@
 packer-sa.json
 **/.terraform/*
 *.tfstate
-.tfstate.*
+*.tfstate.*
 
