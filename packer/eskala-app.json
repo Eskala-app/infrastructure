@@ -12,7 +12,7 @@
       "source_image": "{{user `source_image`}}",
       "machine_type": "g1-small",
       "image_name": "eskala",
-      "image_description": "A CentOS 8 image with NGINX and dependencies to run the eskala-app",
+      "image_description": "A CentOS 8 image with Docker and other dependencies to run the eskala-app",
       "image_family": "custom-eskala",
       "ssh_username": "packer",
       "zone": "us-west2-a"
